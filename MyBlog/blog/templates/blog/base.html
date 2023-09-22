@@ -6,23 +6,23 @@
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="bg-gray-100">
     <header>
       <nav class="flex justify-between bg-zinc-800 w-full text-white h-20 items-center">
         <h1 class="m-10 text-4xl">ブログ</h1> 
         <ul class="flex space-x-10 m-10 text-2xl">
-          <li><a href="{% url 'index' %}">ブログ一覧</a></li>
-          <li><a href="{% url 'create' %}">新規作成</a></li>
+          <li class="hover:underline transition"><a href="{% url 'index' %}">投稿一覧</a></li>
+          <li class="hover:underline transition"><a href="{% url 'create' %}">新規投稿</a></li>
         </ul>
       </nav>
     </header>
     {% block content %}
     {% endblock %}
-    <footer class="text-center text-gray-500 border-t-2 pt-3 mt-8">
+    <footer class="text-center text-gray-800 border-t-2 pt-3 mt-8">
       <p>©︎2023</p>
       <p>DjangoLover</p>
-      <a href="https://github.com/no-commit-message" target="_blank" rel="noopener noreferrer">
-        GitHub no-commit-message
+      <a href="https://github.com/no-commit-message" target="_blank" rel="noopener noreferrer" class="hover:underline transition">
+        GitHub: no-commit-message
       </a>
     </footer>
   </body>
