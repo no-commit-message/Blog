@@ -15,4 +15,4 @@ class Post(models.Model):
         verbose_name_plural = '投稿'
     
     def get_absolute_url(self):
-        return reverse_lazy('detail', kwargs={'pk': self.pk})
+        return reverse_lazy('detail', args=[self.id])

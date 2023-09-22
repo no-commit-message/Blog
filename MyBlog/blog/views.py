@@ -13,6 +13,7 @@ class Detail(DetailView):
 class Create(CreateView):
     model = Post
     fields = ['title', 'body']
+    success_url = reverse_lazy('index')
 
 class Update(UpdateView):
     model = Post
@@ -20,4 +21,3 @@ class Update(UpdateView):
 
 class Delete(DeleteView):
     model = Post
-    success_url = reverse_lazy('index')
