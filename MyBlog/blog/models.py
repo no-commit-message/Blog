@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse_lazy
 
 # Create your models here.
 class Post(models.Model):
@@ -12,3 +13,6 @@ class Post(models.Model):
 
     class Meta:
         verbose_name_plural = '投稿'
+    
+    def get_absolute_url(self):
+        return reverse_lazy('detail', kwargs={'pk': self.pk})

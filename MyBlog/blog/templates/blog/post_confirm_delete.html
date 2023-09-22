@@ -1,0 +1,10 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<p>本当に{{ post.title }}を削除してもよろしいですか？</p>
+<form action="" method="post">
+    {% csrf_token %}
+    <button type="submit" class="bg-red-700 hover:bg-red-800 text-white px-3 py-2 rounded-lg">
+      削除
+    </button>
+</form>
+{% endblock  %}
