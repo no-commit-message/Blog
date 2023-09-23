@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div style="background-image: url({% static 'top_pic.jpg' %});
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;"
+      class="h-screen">
+  <div class="flex flex-col justify-center items-center h-full">
+    <p class="text-white font-bold text-5xl bg-slate-600 bg-opacity-50 p-3 mb-3">今日はどんな一日でしたか？</p>
+    <p class="text-white text-2xl bg-slate-600 bg-opacity-50 p-3">今日の出来事を記録してみませんか？</p>
+  </div>
+</div>
+{% endblock %}
