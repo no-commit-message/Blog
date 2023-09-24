@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, iitial-scale=1.0">
-    <title>Document</title>
+    <title>Blog</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-100">
     <header>
       <nav class="flex justify-between bg-zinc-800 w-full text-white h-20 items-center">
-        <h1 class="m-10 text-4xl">ブログ</h1> 
+        <h1 class="m-10 text-4xl hover:text-gray-300">
+          <a href="{% url 'top' %}">ブログ</a>
+        </h1> 
         <ul class="flex space-x-7 m-10 text-2xl items-center">
           <li class="hover:underline transition"><a href="{% url 'index' %}">投稿一覧</a></li>
           <li class="hover:underline transition"><a href="{% url 'create' %}">新規投稿</a></li>
-          <li class="hover:underline transition bg-blue-700 px-3 py-2 rounded-lg"><a href="{% url 'login' %}">ログイン/新規登録</a></li>
+          {% if request.user.is_authenticated %}
+          <li class="hover:underline transition bg-blue-700 px-3 py-2 rounded-lg hover:bg-blue-800"><a href="{% url 'accounts' %}">アカウント情報</a></li>
+          {% else %}
+          <li class="hover:underline transition bg-blue-700 px-3 py-2 rounded-lg hover:bg-blue-800"><a href="{% url 'login' %}">ログイン/新規登録</a></li>
+          {% endif %}
         </ul>
       </nav>
     </header>
