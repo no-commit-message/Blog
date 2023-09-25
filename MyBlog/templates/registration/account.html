@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p>
-  <a href="{% url 'password_change' %}">パスワードの変更</a>
-</p>
-<p>
-  <a href="{% url 'logout' %}">ログアウト</a>
-</p>
-
+<div class="flex justify-center">
+  <div class="bg-zinc-800 p-6 mt-6 rounded-xl shadow-xl">
+    <p class="text-white text-2xl border border-white rounded-xl py-1 px-4 text-center"><a href="{% url 'password_change' %}">パスワードの変更</a></p>
+    <p class="text-white text-2xl border border-white rounded-xl py-1 px-4 mt-4 text-center"><a href="{% url 'logout' %}">ログアウト</a></p>
+  </div>
+</div>
 {% endblock %}
