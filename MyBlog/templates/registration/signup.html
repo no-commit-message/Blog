@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div>
+  <div>
+    <h1>←ログイン画面に戻る</h1>
+    <h1>会員登録</h1>
+    <form method="post" class="bg-white">
+      <p>ユーザー名</p>
+      {% render_field form.username %}
+      <p>メールアドレス</p>
+      {% render_field form.email %}
+      <p>パスワード</p>
+      {% render_field form.password1 %}
+      <p>パスワード（確認用）</p>
+      {% render_field form.password2 %}
+
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">登録</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
